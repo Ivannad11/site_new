@@ -56,7 +56,7 @@ export function FadeInStagger({ children, className = "", faster = false }: { ch
   );
 }
 
-export const fadeInItem = {
+export const fadeInItem: any = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
