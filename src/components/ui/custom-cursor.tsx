@@ -18,7 +18,11 @@ export const CustomCursor = () => {
   useEffect(() => {
     // Check if device is desktop (has fine pointer)
     const mediaQuery = window.matchMedia("(pointer: fine)");
-    setIsDesktop(mediaQuery.matches);
+    
+    // Set state only if needed to avoid unnecessary re-renders
+    if (mediaQuery.matches !== isDesktop) {
+        setIsDesktop(mediaQuery.matches);
+    }
 
     const moveCursor = (e: MouseEvent) => {
       // Center the cursor
@@ -49,6 +53,7 @@ export const CustomCursor = () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseover", handleMouseOver);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!isDesktop) return null;

@@ -44,11 +44,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Component
         className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref as any}
+        ref={ref as any} // eslint-disable-line @typescript-eslint/no-explicit-any
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        {...props as any}
+        {...props as any} // eslint-disable-line @typescript-eslint/no-explicit-any
       />
     )
   }
