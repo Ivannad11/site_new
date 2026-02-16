@@ -1,3 +1,4 @@
+# Netlify configuration for Next.js static export
 [build]
   command = "npm run build"
   publish = "out"
