@@ -45,27 +45,26 @@ export function Hero() {
             Агентство интерактивных решений
           </motion.div>
           
-          <motion.h1 variants={fadeInItem} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 drop-shadow-sm">
-            Превращаем стенд <br className="hidden md:block" />
-            в инструмент продаж
+          <motion.h1 variants={fadeInItem} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground drop-shadow-sm">
+            Преврати стенд <br className="hidden md:block" />
+            в <span className="gradient-text">инструмент продаж</span>
           </motion.h1>
           
           <motion.p variants={fadeInItem} className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-[600px] mx-auto leading-relaxed">
-            Стратегия, креатив и технологии в одном окне.
-            Мы делаем так, чтобы стенды работали на ваш бизнес, а не просто стояли.
+            Хватит строить декорации. Мы создаём интерактивные решения, которые привлекают клиентов, а не просто занимают место.
           </motion.p>
 
           <motion.div
             variants={fadeInItem}
             className="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4"
           >
-            <Button size="lg" className="text-base h-12 px-8 group" id="hero-button-primary" asChild>
+            <Button size="lg" className="text-base h-12 px-8 group gradient-primary animate-cta-glow border-0" id="hero-button-primary" asChild>
               <Link href="#contacts">
                 Обсудить проект
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-base h-12 px-8 bg-background/50 backdrop-blur-sm" id="hero-button-secondary" asChild>
+            <Button size="lg" variant="outline" className="text-base h-12 px-8 bg-background/50 backdrop-blur-sm border-primary/20 hover:bg-primary/10" id="hero-button-secondary" asChild>
               <Link href="#portfolio">
                 Смотреть кейсы
               </Link>
@@ -81,14 +80,14 @@ export function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 mt-12 border-t border-border/50 w-full max-w-4xl"
         >
           {[
-            { label: "Проектов", value: "50+" },
-            { label: "Отраслей", value: "12+" },
-            { label: "Вовлечённость", value: "×4" },
-            { label: "Бюджет", value: "-30%" },
+            { label: "Проектов", value: "50+", gradient: "gradient-primary" },
+            { label: "Отраслей", value: "12+", gradient: "gradient-text" },
+            { label: "Вовлечённость", value: "×4", gradient: "gradient-success" },
+            { label: "Бюджет", value: "-30%", gradient: "gradient-warning" },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center">
-              <span className="text-3xl font-bold text-foreground">{stat.value}</span>
-              <span className="text-sm text-muted-foreground">{stat.label}</span>
+              <span className={`text-3xl font-bold bg-clip-text text-transparent ${stat.gradient}`}>{stat.value}</span>
+              <span className="text-sm text-muted-foreground font-medium uppercase tracking-wider mt-2">{stat.label}</span>
             </div>
           ))}
         </motion.div>
