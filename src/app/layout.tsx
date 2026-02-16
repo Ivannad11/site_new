@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin", "cyrillic"], variable: "--font-space-grotesk" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const viewport: Viewport = {
-  themeColor: "#0B0F1E",
+  themeColor: "#09090b",
   colorScheme: "dark",
 };
 
@@ -56,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className="dark scroll-smooth">
-      <body className={`${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground`}>
+      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
         {children}
       </body>
     </html>

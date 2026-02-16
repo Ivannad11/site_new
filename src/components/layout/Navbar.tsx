@@ -36,7 +36,7 @@ export function Navbar({ onNavigate, mobileMode = false }: NavbarProps) {
             }
           }}
         >
-          <span className="gradient-primary bg-clip-text text-transparent font-black tracking-wider">ШТАБ</span>
+          ШТАБ
         </Link>
         
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -55,7 +55,7 @@ export function Navbar({ onNavigate, mobileMode = false }: NavbarProps) {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button variant="default" size="sm" className="hidden md:flex gradient-primary border-0 font-medium">
+          <Button variant="default" size="sm" className="hidden md:flex">
             Обсудить проект
           </Button>
           <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu}>
